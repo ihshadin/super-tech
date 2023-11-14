@@ -115,13 +115,26 @@ const HeroBanner = ({ heroBannerData }) => {
 
 				<div>
 					<AnimatePresence>
-						<Link href={`/product/${heroBanner.slug.current}`}>
+						{/* <Link href={`/product/${heroBanner.slug.current}`}>
 							<motion.button
 								{...leftSidAnimation(1, 3)}
 								key={heroBanner.buttonText + heroItem.toString() + "K"}
 								type="button"
 							>
 								{heroBanner.buttonText}
+							</motion.button>
+						</Link> */}
+						<Link href={`/product/${heroBanner.slug.current}`}>
+							<motion.button
+								{...leftSidAnimation(1, 3)}
+								key={heroBanner.buttonText + heroItem.toString() + "K"}
+								type="button"
+							>
+								<svg width="150px" height="50px" viewBox="0 0 180 60">
+									<rect x="1" y="1" width="178" height="58" rx="10" ry="10" />
+									<rect x="1" y="1" width="178" height="58" rx="10" ry="10" />
+								</svg>
+								<span>Shop Now</span>
 							</motion.button>
 						</Link>
 						<motion.div

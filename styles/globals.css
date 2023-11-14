@@ -132,9 +132,12 @@ a {
 .logo {
 	height: 45px;
 	width: 45px;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
-
+.navbar-shop-name {
+	font-weight: 600;
+}
 .navbar-buttons-container {
 	display: flex;
 	flex-direction: row;
@@ -333,6 +336,8 @@ a {
 	font-size: var(--h2-font-size);
 	border-radius: 50%;
 	margin: 0 2px;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 	padding: 0 3px;
 }
@@ -407,20 +412,40 @@ a {
 }
 
 .hero-banner-container button {
-	border-radius: 15px;
-	padding: 10px 16px;
-	background-color: var(--first-color);
-	color: var(--text-color);
-	border: none;
+	width: 150px;
+    height: 50px;
+    cursor: pointer;
+    background: var(--first-color);
+    border: 0px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+	position: relative;
+	outline: 0;
+	border-radius: 10px;
 	margin-top: 25px;
-	font-size: 28px;
+	font-size: 20px;
 	font-weight: var(--font-semi-bold);
-	cursor: pointer;
-	transition: transform 0.4s ease;
-	/* z-index:10000 !important; */
+	color: var(--text-color);
+}
+.hero-banner-container button svg {
+	position: absolute;
+    left: 0;
+    top: 0;
+	bottom: 0;
+	right: 0;
+    fill: none;
+    stroke: var(--text-color);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
 }
 .hero-banner-container button:hover {
 	transform: scale(1.1, 1.1);
+	transition: 1s ease-in-out;
+}
+.hero-banner-container button:hover svg {
+	stroke-dashoffset: -480;
+	border-radius: 10px;
 }
 
 .hero-banner-image {
@@ -429,7 +454,8 @@ a {
 	right: 20%;
 	width: 650px;
 	height: 650px;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 	pointer-events: none;
 	z-index: -1;
 }
@@ -520,11 +546,21 @@ a {
 	position: absolute;
 	white-space: nowrap;
 	will-change: transform;
-	animation: marquee 15s linear infinite;
+	-webkit-animation: marquee 15s linear infinite;
+	        animation: marquee 15s linear infinite;
 	width: 180%;
 }
 .track:hover {
-	animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+	        animation-play-state: paused;
+}
+@-webkit-keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
 }
 @keyframes marquee {
 	from {
@@ -598,7 +634,8 @@ span.text-red {
 	background-color: var(--bg-color-light);
 	transform: scale(1, 1);
 	transition: transform 0.5s ease;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
 
 .product-name {
@@ -647,16 +684,40 @@ span.text-red {
 	justify-content: flex-start;
 	max-width: 100%;
 }
-.banner-desc button {
-	border-radius: 15px;
-	padding: 10px 16px;
-	background-color: var(--text-color);
-	color: var(--first-color);
-	border: none;
+.footer-banner-container .banner-desc button {
+	width: 150px;
+    height: 50px;
+    cursor: pointer;
+    background: var(--text-color);
+    border: 0px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+	position: relative;
+	outline: 0;
+	border-radius: 10px;
 	margin-top: 40px;
 	font-size: 20px;
-	font-weight: var(--font-bold);
-	cursor: pointer;
+	font-weight: var(--font-semi-bold);
+	color: var(--first-color);
+}
+.footer-banner-container .banner-desc button svg {
+	position: absolute;
+    left: 0;
+    top: 0;
+	bottom: 0;
+	right: 0;
+    fill: none;
+    stroke: var(--bg-color);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+.footer-banner-container .banner-desc button:hover {
+	transition: 1s ease-in-out;
+}
+.footer-banner-container .banner-desc button:hover svg {
+	stroke-dashoffset: -480;
+	border-radius: 10px;
 }
 .banner-desc .left {
 	max-width: 340px;
@@ -677,7 +738,8 @@ span.text-red {
 	right: 0;
 	width: 550px;
 	height: 550px;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 	pointer-events: none;
 	z-index: -1;
 }
@@ -693,12 +755,12 @@ span.text-red {
 	font-size: 23px;
 	max-width: 750px;
 }
-/* .banner-desc .right .company-desc{
+.banner-desc .right .company-desc{
   font-size: 14px;
   font-weight: 300;
-} */
+}
 .light-theme .light-theme .banner-desc button {
-	color: var(--first-color);
+	color: var(--text-color);
 }
 .light-theme .hero-banner-container button,
 .light-theme .footer-banner-container {
@@ -710,6 +772,9 @@ span.text-red {
 }
 .light-theme .footer-banner-container button {
 	background-color: var(--bg-color);
+}
+.light-theme .footer-banner-container .banner-desc button svg {
+    stroke: var(--text-color);
 }
 .light-theme .hero-banner-container .desc p {
 	color: var(--secondary-color-darker);
@@ -831,7 +896,8 @@ span.text-red {
 	height: 150px;
 	border-radius: 15px;
 	background-color: #ebebeb;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
 .item-desc .flex {
 	display: flex;
@@ -912,7 +978,8 @@ span.text-red {
 	height: 400px;
 	cursor: pointer;
 	transition: 0.3s ease-in-out;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
 .product-detail-image:hover {
 	background-color: var(--first-color);
@@ -1167,7 +1234,8 @@ span.text-red {
 	position: absolute;
 	height: 500px;
 	width: 500px;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 	z-index: -1;
 }
 .category-menu-button-container {
@@ -1220,7 +1288,8 @@ span.text-red {
 .featured-product-image {
 	transform: scale(1, 1);
 	transition: transform 0.5s ease;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
 
 .featured-product-name {
@@ -1245,7 +1314,8 @@ span.text-red {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	column-gap: 0.5rem;
+	-moz-column-gap: 0.5rem;
+	     column-gap: 0.5rem;
 	margin-top: 0.45rem;
 }
 .featured-product-button-text {
@@ -1282,8 +1352,11 @@ span.text-red {
 	align-items: center;
 	justify-content: center;
 	margin: 3rem auto;
-	column-gap: 1rem;
+	-moz-column-gap: 1rem;
+	     column-gap: 1rem;
 	cursor: pointer;
+	max-width: -webkit-max-content;
+	max-width: -moz-max-content;
 	max-width: max-content;
 	padding: 0.85rem;
 	border-radius: 15px;
@@ -1589,6 +1662,8 @@ span.text-red {
 	margin-top: 1.5rem;
 	border: 3px solid var(--first-color);
 	padding: 0.3rem;
+	width: -webkit-max-content;
+	width: -moz-max-content;
 	width: max-content;
 	border-radius: 15px;
 }
@@ -1733,64 +1808,84 @@ span.text-red {
 	transform: rotate(calc(18deg * 20));
 }
 .loader-container .loader :nth-child(1)::before {
-	animation-delay: calc(0.1s * 1);
+	-webkit-animation-delay: calc(0.1s * 1);
+	        animation-delay: calc(0.1s * 1);
 }
 .loader-container .loader :nth-child(2)::before {
-	animation-delay: calc(0.1s * 2);
+	-webkit-animation-delay: calc(0.1s * 2);
+	        animation-delay: calc(0.1s * 2);
 }
 .loader-container .loader :nth-child(3)::before {
-	animation-delay: calc(0.1s * 3);
+	-webkit-animation-delay: calc(0.1s * 3);
+	        animation-delay: calc(0.1s * 3);
 }
 .loader-container .loader :nth-child(4)::before {
-	animation-delay: calc(0.1s * 4);
+	-webkit-animation-delay: calc(0.1s * 4);
+	        animation-delay: calc(0.1s * 4);
 }
 .loader-container .loader :nth-child(5)::before {
-	animation-delay: calc(0.1s * 5);
+	-webkit-animation-delay: calc(0.1s * 5);
+	        animation-delay: calc(0.1s * 5);
 }
 .loader-container .loader :nth-child(6)::before {
-	animation-delay: calc(0.1s * 6);
+	-webkit-animation-delay: calc(0.1s * 6);
+	        animation-delay: calc(0.1s * 6);
 }
 .loader-container .loader :nth-child(7)::before {
-	animation-delay: calc(0.1s * 7);
+	-webkit-animation-delay: calc(0.1s * 7);
+	        animation-delay: calc(0.1s * 7);
 }
 .loader-container .loader :nth-child(8)::before {
-	animation-delay: calc(0.1s * 8);
+	-webkit-animation-delay: calc(0.1s * 8);
+	        animation-delay: calc(0.1s * 8);
 }
 .loader-container .loader :nth-child(9)::before {
-	animation-delay: calc(0.1s * 9);
+	-webkit-animation-delay: calc(0.1s * 9);
+	        animation-delay: calc(0.1s * 9);
 }
 .loader-container .loader :nth-child(10)::before {
-	animation-delay: calc(0.1s * 10);
+	-webkit-animation-delay: calc(0.1s * 10);
+	        animation-delay: calc(0.1s * 10);
 }
 .loader-container .loader :nth-child(11)::before {
-	animation-delay: calc(0.1s * 11);
+	-webkit-animation-delay: calc(0.1s * 11);
+	        animation-delay: calc(0.1s * 11);
 }
 .loader-container .loader :nth-child(12)::before {
-	animation-delay: calc(0.1s * 12);
+	-webkit-animation-delay: calc(0.1s * 12);
+	        animation-delay: calc(0.1s * 12);
 }
 .loader-container .loader :nth-child(13)::before {
-	animation-delay: calc(0.1s * 13);
+	-webkit-animation-delay: calc(0.1s * 13);
+	        animation-delay: calc(0.1s * 13);
 }
 .loader-container .loader :nth-child(14)::before {
-	animation-delay: calc(0.1s * 14);
+	-webkit-animation-delay: calc(0.1s * 14);
+	        animation-delay: calc(0.1s * 14);
 }
 .loader-container .loader :nth-child(15)::before {
-	animation-delay: calc(0.1s * 15);
+	-webkit-animation-delay: calc(0.1s * 15);
+	        animation-delay: calc(0.1s * 15);
 }
 .loader-container .loader :nth-child(16)::before {
-	animation-delay: calc(0.1s * 16);
+	-webkit-animation-delay: calc(0.1s * 16);
+	        animation-delay: calc(0.1s * 16);
 }
 .loader-container .loader :nth-child(17)::before {
-	animation-delay: calc(0.1s * 17);
+	-webkit-animation-delay: calc(0.1s * 17);
+	        animation-delay: calc(0.1s * 17);
 }
 .loader-container .loader :nth-child(18)::before {
-	animation-delay: calc(0.1s * 18);
+	-webkit-animation-delay: calc(0.1s * 18);
+	        animation-delay: calc(0.1s * 18);
 }
 .loader-container .loader :nth-child(19)::before {
-	animation-delay: calc(0.1s * 19);
+	-webkit-animation-delay: calc(0.1s * 19);
+	        animation-delay: calc(0.1s * 19);
 }
 .loader-container .loader :nth-child(20)::before {
-	animation-delay: calc(0.1s * 20);
+	-webkit-animation-delay: calc(0.1s * 20);
+	        animation-delay: calc(0.1s * 20);
 }
 .loader-container .loader span::before {
 	content: "";
@@ -1804,11 +1899,22 @@ span.text-red {
 	box-shadow: 0 0 10px var(--first-color), 0 0 20px var(--first-color),
 		0 0 40px var(--first-color), 0 0 60px var(--first-color),
 		0 0 80px var(--first-color), 0 0 100px var(--first-color);
-	animation: animate 2s linear infinite;
-	animation-delay: calc();
+	-webkit-animation: animate 2s linear infinite;
+	        animation: animate 2s linear infinite;
+	-webkit-animation-delay: calc();
+	        animation-delay: calc();
 }
 .btn.show-filters-btn {
 	display: none;
+}
+@-webkit-keyframes animate {
+	0% {
+		transform: scale(1);
+	}
+	80%,
+	100% {
+		transform: scale(0);
+	}
 }
 @keyframes animate {
 	0% {
@@ -1974,7 +2080,8 @@ span.text-red {
 		font-size: 20px;
 	}
 	.track {
-		animation: marquee 10s linear infinite;
+		-webkit-animation: marquee 10s linear infinite;
+		        animation: marquee 10s linear infinite;
 		width: 550%;
 	}
 	.success-wrapper,
@@ -1999,7 +2106,10 @@ span.text-red {
 	}
 	.link-search-products-container {
 		margin: 3rem auto;
-		column-gap: 0.3rem;
+		-moz-column-gap: 0.3rem;
+		     column-gap: 0.3rem;
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
 		width: fit-content;
 		max-width: 90%;
 		padding: 0.85rem;
@@ -2216,3 +2326,48 @@ span.text-red {
 		font-size: 2.6rem;
 	}
 }
+
+
+/* Button style */
+/* .supertech_btn {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    background: var(--first-color);
+    border: 0px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+	position: relative;
+	outline: 0;
+	border-radius: 10px;
+	transition: stroke-dashoffset 0.3s ease;
+} */
+
+/* .supertech_btn svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+	bottom: 0;
+	right: 0;
+    fill: none;
+    stroke: var(--text-color);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+} */
+
+/* .supertech_btn:hover {
+    transition: 1s ease-in-out;
+    background: var(--first-color);
+}
+
+.supertech_btn:hover svg {
+    stroke-dashoffset: -480;
+	border-radius: 10px;
+} */
+
+/* .supertech_btn span {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 100;
+} */

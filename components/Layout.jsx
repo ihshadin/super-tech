@@ -7,11 +7,11 @@ import { useStateContext } from "../context/StateContext";
 
 const Layout = ({ children }) => {
 
-	const {lightTheme} = useStateContext();
+	const { lightTheme } = useStateContext();
 
 
 	return (
-		<div className={"body"+ (lightTheme?" light-theme":"")}>
+		<div className={"body" + (lightTheme ? " light-theme" : "")}>
 			<Head>
 				<link
 					rel="icon"
@@ -25,10 +25,10 @@ const Layout = ({ children }) => {
 					sizes="32x32"
 					href="/favicon-32x32.png"
 				></link>
-				<title>Awesome Gear - Gaming Store</title>
+				<title>Super Tech - Gaming Store</title>
 				<meta
 					name="description"
-					content="Awesome Gear is the best gaming Ecommerce, we have the best deals!"
+					content="Super Tech is the best gaming Ecommerce, we have the best deals!"
 				/>
 			</Head>
 			<header>

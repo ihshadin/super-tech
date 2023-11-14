@@ -67,7 +67,7 @@ const Navbar = () => {
 					className="logo-container"
 				>
 					<img src="/logo.png" alt="" className="logo" />
-					<div className="navbar-shop-name">Super Tech</div>
+					<div className="navbar-shop-name">SuperTech</div>
 				</motion.div>
 			</Link>
 			<div className="navbar-buttons-container">
