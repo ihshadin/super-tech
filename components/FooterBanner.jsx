@@ -30,7 +30,17 @@ const FooterBanner = ({
 					<h3>{midText}</h3>
 					<p>{desc}</p>
 					<Link href={`/product/${slug.current}`}>
-						<button type="button">{buttonText}</button>
+						<button>
+							{/* <svg width="150px" height="50px" viewBox="0 0 180 60" class="border">
+								<polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+								<polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+							</svg> */}
+							<svg width="150px" height="50px" viewBox="0 0 180 60">
+								<rect x="1" y="1" width="178" height="58" rx="10" ry="10" />
+								<rect x="1" y="1" width="178" height="58" rx="10" ry="10" />
+							</svg>
+							<span>Shop Now</span>
+						</button>
 					</Link>
 				</div>
 			</div>

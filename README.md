@@ -1,4 +1,4 @@
-# Ecommerce - Awesome Gear
+# Ecommerce - Super Tech
 
 ![](public/assets/homepage.png)
 

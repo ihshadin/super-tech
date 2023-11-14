@@ -134,7 +134,6 @@ a {
   width: 45px;
   object-fit: contain;
 }
-
 .navbar-buttons-container {
   display: flex;
   flex-direction: row;
@@ -407,31 +406,52 @@ a {
 }
 
 .hero-banner-container button {
-  border-radius: 15px;
-  padding: 10px 16px;
-  background-color: var(--first-color);
-  color: var(--text-color);
-  border: none;
-  margin-top: 25px;
-  font-size: 28px;
-  font-weight: var(--font-semi-bold);
-  cursor: pointer;
-  transition: transform 0.4s ease;
-  /* z-index:10000 !important; */
+	width: 150px;
+    height: 50px;
+    cursor: pointer;
+    background: var(--first-color);
+    border: 0px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+	position: relative;
+	outline: 0;
+	border-radius: 10px;
+	margin-top: 25px;
+	font-size: 20px;
+	font-weight: var(--font-semi-bold);
+	color: var(--text-color);
+}
+.hero-banner-container button svg {
+	position: absolute;
+    left: 0;
+    top: 0;
+	bottom: 0;
+	right: 0;
+    fill: none;
+    stroke: var(--text-color);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
 }
 .hero-banner-container button:hover {
-  transform: scale(1.1, 1.1);
+	transform: scale(1.1, 1.1);
+	transition: 1s ease-in-out;
+}
+.hero-banner-container button:hover svg {
+	stroke-dashoffset: -480;
+	border-radius: 10px;
 }
 
 .hero-banner-image {
-  position: absolute;
-  top: -15%;
-  right: 20%;
-  width: 650px;
-  height: 650px;
-  object-fit: contain;
-  pointer-events: none;
-  z-index: -1;
+	position: absolute;
+	top: -15%;
+	right: 20%;
+	width: 650px;
+	height: 650px;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	pointer-events: none;
+	z-index: -1;
 }
 .smallerImage {
   width: 450px;
@@ -629,11 +649,12 @@ span.text-red {
   transform: scale(1.1, 1.1);
 }
 .product-image {
-  border-radius: 15px;
-  background-color: var(--bg-color-light);
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
-  object-fit: contain;
+	border-radius: 15px;
+	background-color: var(--bg-color-light);
+	transform: scale(1, 1);
+	transition: transform 0.5s ease;
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
 
 .product-name {
@@ -682,16 +703,40 @@ span.text-red {
   justify-content: flex-start;
   max-width: 100%;
 }
-.banner-desc button {
-  border-radius: 15px;
-  padding: 10px 16px;
-  background-color: var(--text-color);
-  color: var(--first-color);
-  border: none;
-  margin-top: 40px;
-  font-size: 20px;
-  font-weight: var(--font-bold);
-  cursor: pointer;
+.footer-banner-container .banner-desc button {
+	width: 150px;
+    height: 50px;
+    cursor: pointer;
+    background: var(--text-color);
+    border: 0px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+	position: relative;
+	outline: 0;
+	border-radius: 10px;
+	margin-top: 40px;
+	font-size: 20px;
+	font-weight: var(--font-semi-bold);
+	color: var(--first-color);
+}
+.footer-banner-container .banner-desc button svg {
+	position: absolute;
+    left: 0;
+    top: 0;
+	bottom: 0;
+	right: 0;
+    fill: none;
+    stroke: var(--bg-color);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+.footer-banner-container .banner-desc button:hover {
+	transition: 1s ease-in-out;
+}
+.footer-banner-container .banner-desc button:hover svg {
+	stroke-dashoffset: -480;
+	border-radius: 10px;
 }
 .banner-desc .left {
   max-width: 340px;
@@ -728,12 +773,12 @@ span.text-red {
   font-size: 23px;
   max-width: 750px;
 }
-/* .banner-desc .right .company-desc{
+.banner-desc .right .company-desc{
   font-size: 14px;
   font-weight: 300;
-} */
+}
 .light-theme .light-theme .banner-desc button {
-  color: var(--first-color);
+	color: var(--text-color);
 }
 .light-theme .hero-banner-container button,
 .light-theme .footer-banner-container {
@@ -745,6 +790,9 @@ span.text-red {
 }
 .light-theme .footer-banner-container button {
   background-color: var(--bg-color);
+}
+.light-theme .footer-banner-container .banner-desc button svg {
+    stroke: var(--text-color);
 }
 .light-theme .hero-banner-container .desc p {
   color: var(--secondary-color-darker);
@@ -864,11 +912,12 @@ span.text-red {
   padding: 20px;
 }
 .product .cart-product-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 15px;
-  background-color: #ebebeb;
-  object-fit: contain;
+	width: 150px;
+	height: 150px;
+	border-radius: 15px;
+	background-color: #ebebeb;
+	-o-object-fit: contain;
+	   object-fit: contain;
 }
 .item-desc .flex {
   display: flex;
@@ -944,7 +993,6 @@ span.text-red {
 .product-detail-image {
   border-radius: 15px;
   background-color: #ebebeb;
-
   width: 400px;
   height: 400px;
   cursor: pointer;
@@ -1852,6 +1900,15 @@ span.text-red {
 .btn.show-filters-btn {
   display: none;
 }
+@-webkit-keyframes animate {
+	0% {
+		transform: scale(1);
+	}
+	80%,
+	100% {
+		transform: scale(0);
+	}
+}
 @keyframes animate {
   0% {
     transform: scale(1);
@@ -2266,3 +2323,48 @@ span.text-red {
     font-size: 2.6rem;
   }
 }
+
+
+/* Button style */
+/* .supertech_btn {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    background: var(--first-color);
+    border: 0px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;
+	position: relative;
+	outline: 0;
+	border-radius: 10px;
+	transition: stroke-dashoffset 0.3s ease;
+} */
+
+/* .supertech_btn svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+	bottom: 0;
+	right: 0;
+    fill: none;
+    stroke: var(--text-color);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+} */
+
+/* .supertech_btn:hover {
+    transition: 1s ease-in-out;
+    background: var(--first-color);
+}
+
+.supertech_btn:hover svg {
+    stroke-dashoffset: -480;
+	border-radius: 10px;
+} */
+
+/* .supertech_btn span {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 100;
+} */
